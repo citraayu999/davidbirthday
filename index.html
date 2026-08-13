@@ -512,6 +512,8 @@
             height: 260px;
             object-fit: cover;
             border-radius: 6px;
+            display: block;
+            background-color: #f0f0f0;
         }
 
         .polaroid-caption {
@@ -851,14 +853,14 @@
         <div class="floating-heart" style="left: 85%; animation-delay: 1s;">🤍</div>
     </div>
 
-    <!-- AUDIO PLAYER -->
+    <!-- AUDIO PLAYER (SUDAH DISESUAIKAN KE song.mp3) -->
     <audio id="bg-music" loop>
-        <source src="Shania Twain - You-'re Still The One.mp3" type="audio/mpeg">
+        <source src="song.mp3" type="audio/mpeg">
     </audio>
 
     <div class="music-player">
-        <span>♫ now playing: <strong>Shania Twain - You're Still The One</strong></span>
-        <button class="music-btn" id="music-toggle" onclick="toggleMusic()">⏸</button>
+        <span>♫ now playing: <strong>You're Still The One</strong></span>
+        <button class="music-btn" id="music-toggle" onclick="toggleMusic()">▶</button>
     </div>
 
     <!-- 1. LANDING PAGE -->
@@ -895,7 +897,7 @@
         <button class="btn" id="continue-btn-1" style="display: none; background: var(--baby-blue); color: var(--navy);" onclick="nextSection('open-letter')">continue →</button>
     </section>
 
-    <!-- 3. OPEN LETTER (BLUE ENVELOPE + RED HEARTS) -->
+    <!-- 3. OPEN LETTER -->
     <section id="open-letter" class="section">
         <div id="envelope-wrapper">
             <div class="envelope-container">
@@ -918,7 +920,6 @@
             </div>
         </div>
 
-        <!-- HIASAN KERTAS SURAT ELEGAN & CUTE -->
         <div id="letter-content" class="letter-paper" style="display: none;">
             <div class="washi-tape"></div>
 
@@ -960,28 +961,28 @@ I hope this brings a little smile to your face today🤍</p>
             <span style="font-size: 1rem;">✨</span>
         </div>
         <div class="scrapbook-grid">
-            <div class="polaroid" style="--angle: -2deg;" onclick="zoomImage('us-01.jpeg')">
-                <img src="us-01.jpeg" alt="Us 1" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=us-01.jpeg'">
+            <div class="polaroid" style="--angle: -2deg;" onclick="zoomImage(this)">
+                <img src="us-01.jpeg" alt="Us 1" onerror="handleImgError(this, 'us-01')">
                 <p class="polaroid-caption">one of my favorite memories</p>
             </div>
-            <div class="polaroid" style="--angle: 3deg;" onclick="zoomImage('us-02.jpeg')">
-                <img src="us-02.jpeg" alt="Us 2" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=us-02.jpeg'">
+            <div class="polaroid" style="--angle: 3deg;" onclick="zoomImage(this)">
+                <img src="us-02.jpeg" alt="Us 2" onerror="handleImgError(this, 'us-02')">
                 <p class="polaroid-caption">you + me</p>
             </div>
-            <div class="polaroid" style="--angle: -1deg;" onclick="zoomImage('us-03.jpeg')">
-                <img src="us-03.jpeg" alt="Us 3" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=us-03.jpeg'">
+            <div class="polaroid" style="--angle: -1deg;" onclick="zoomImage(this)">
+                <img src="us-03.jpeg" alt="Us 3" onerror="handleImgError(this, 'us-03')">
                 <p class="polaroid-caption">another memory I'll always keep</p>
             </div>
-            <div class="polaroid" style="--angle: 2deg;" onclick="zoomImage('us-04.jpeg')">
-                <img src="us-04.jpeg" alt="Us 4" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=us-04.jpeg'">
+            <div class="polaroid" style="--angle: 2deg;" onclick="zoomImage(this)">
+                <img src="us-04.jpeg" alt="Us 4" onerror="handleImgError(this, 'us-04')">
                 <p class="polaroid-caption">my happy place</p>
             </div>
-            <div class="polaroid" style="--angle: -3deg;" onclick="zoomImage('us-05.jpeg')">
-                <img src="us-05.jpeg" alt="Us 5" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=us-05.jpeg'">
+            <div class="polaroid" style="--angle: -3deg;" onclick="zoomImage(this)">
+                <img src="us-05.jpeg" alt="Us 5" onerror="handleImgError(this, 'us-05')">
                 <p class="polaroid-caption">time flies when I'm with you</p>
             </div>
-            <div class="polaroid" style="--angle: 1deg;" onclick="zoomImage('us-06.jpeg')">
-                <img src="us-06.jpeg" alt="Us 6" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=us-06.jpeg'">
+            <div class="polaroid" style="--angle: 1deg;" onclick="zoomImage(this)">
+                <img src="us-06.jpeg" alt="Us 6" onerror="handleImgError(this, 'us-06')">
                 <p class="polaroid-caption">forever my favorite person</p>
             </div>
         </div>
@@ -995,24 +996,24 @@ I hope this brings a little smile to your face today🤍</p>
             <span style="font-size: 1rem;">📸</span>
         </div>
         <div class="scrapbook-grid">
-            <div class="polaroid" style="--angle: 2deg;" onclick="zoomImage('david-01.jpeg')">
-                <img src="david-01.jpeg" alt="David 1" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=david-01.jpeg'">
+            <div class="polaroid" style="--angle: 2deg;" onclick="zoomImage(this)">
+                <img src="david-01.jpeg" alt="David 1" onerror="handleImgError(this, 'david-01')">
                 <p class="polaroid-caption">my favorite face</p>
             </div>
-            <div class="polaroid" style="--angle: -3deg;" onclick="zoomImage('david-02.jpeg')">
-                <img src="david-02.jpeg" alt="David 2" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=david-02.jpeg'">
+            <div class="polaroid" style="--angle: -3deg;" onclick="zoomImage(this)">
+                <img src="david-02.jpeg" alt="David 2" onerror="handleImgError(this, 'david-02')">
                 <p class="polaroid-caption">looking suspiciously handsome</p>
             </div>
-            <div class="polaroid" style="--angle: 1deg;" onclick="zoomImage('david-03.jpeg')">
-                <img src="david-03.jpeg" alt="David 3" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=david-03.jpeg'">
+            <div class="polaroid" style="--angle: 1deg;" onclick="zoomImage(this)">
+                <img src="david-03.jpeg" alt="David 3" onerror="handleImgError(this, 'david-03')">
                 <p class="polaroid-caption">unfortunately, you're very cute</p>
             </div>
-            <div class="polaroid" style="--angle: -2deg;" onclick="zoomImage('david-04.jpeg')">
-                <img src="david-04.jpeg" alt="David 4" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=david-04.jpeg'">
+            <div class="polaroid" style="--angle: -2deg;" onclick="zoomImage(this)">
+                <img src="david-04.jpeg" alt="David 4" onerror="handleImgError(this, 'david-04')">
                 <p class="polaroid-caption">the sweetest smile</p>
             </div>
-            <div class="polaroid" style="--angle: 3deg;" onclick="zoomImage('david-05.jpeg')">
-                <img src="david-05.jpeg" alt="David 5" onerror="this.src='https://via.placeholder.com/400x300/BFDDF5/173B63?text=david-05.jpeg'">
+            <div class="polaroid" style="--angle: 3deg;" onclick="zoomImage(this)">
+                <img src="david-05.jpeg" alt="David 5" onerror="handleImgError(this, 'david-05')">
                 <p class="polaroid-caption">can't get enough of you</p>
             </div>
         </div>
@@ -1052,7 +1053,7 @@ I hope this brings a little smile to your face today🤍</p>
         <button class="btn" onclick="nextSection('final-reveal')">open chapter 27 ✨</button>
     </section>
 
-    <!-- 8. CHAPTER 27 REVEAL (MIDNIGHT BIRTHDAY LETTER) -->
+    <!-- 8. CHAPTER 27 REVEAL -->
     <section id="final-reveal" class="section">
         <div class="luxury-letter-container">
             <div class="bg-watermark-27">27</div>
@@ -1223,9 +1224,23 @@ I hope this brings a little smile to your face today🤍</p>
             }
         }
 
-        function zoomImage(src) {
-            document.getElementById('modalImg').src = src;
-            document.getElementById('imgModal').style.display = 'flex';
+        /* AUTO FALLBACK DETECTOR UNTUK GAMBAR */
+        function handleImgError(imgElement, baseName) {
+            const formats = ['.jpeg', '.jpg', '.JPG', '.JPEG', '.png', '.PNG'];
+            let currentTry = parseInt(imgElement.getAttribute('data-try') || '0');
+            
+            if (currentTry < formats.length) {
+                imgElement.setAttribute('data-try', currentTry + 1);
+                imgElement.src = baseName + formats[currentTry];
+            }
+        }
+
+        function zoomImage(element) {
+            const img = element.querySelector('img');
+            if(img && img.src) {
+                document.getElementById('modalImg').src = img.src;
+                document.getElementById('imgModal').style.display = 'flex';
+            }
         }
 
         function closeModal() {
